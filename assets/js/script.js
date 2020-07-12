@@ -101,7 +101,7 @@ function chooseDrinkCategory() {
     });
 }
 
-// Grabbing the array for Drink Category
+// Grabbing the array for Drink Alcohol
 function chooseDrinkAlcohol() {
     drinkAlcoholChoice = $("#drink-alcohol-choice").val();
     var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=" + drinkAlcoholChoice;
