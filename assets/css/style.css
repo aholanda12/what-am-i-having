@@ -1,3 +1,36 @@
-body {
-    background-color: red;
+.menu {
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+
 }
+:hover {
+        background: lighten(#333, 10%);
+    }
+.entete {
+    text-align: center;
+    background: rgb(123, 168, 211);   
+}
+.grid-x {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    
+}
+img{
+    width: 600px;
+    height: 300px;
+}
+
+.card-section{
+    background: rgb(123, 168, 211);
+}
+
+
+
+.card-divider{
+    justify-content: center;
+    
+}
+
+
+
