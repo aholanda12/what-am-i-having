@@ -1,8 +1,24 @@
 
 /* General styles */
-
+body{
+background: url(rice-with-zucchini-soft-boiled-egg-and-parsley-in-green-1410235.jpg) 50% no-repeat;
+}
 /* NavBar*/
 
+.menu {
+  font-family: "Lobster", cursive;
+  font-size: 30px;
+  overflow: hidden;
+  display: block;
+}
+#navbar {
+    background-color: white;
+}
+
+a:hover {
+  background: lighten(#333, 10%);
+}
+/*Header*/
 
 .hero-section {
     background: url(rice-with-zucchini-soft-boiled-egg-and-parsley-in-green-1410235.jpg) 50% no-repeat;
@@ -25,30 +41,7 @@
     color: #fefefe;
     text-shadow: 1px 1px 2px #0a0a0a;
   }
-  
-  
 
-.menu {
-  font-family: "Lobster", cursive;
-  font-size: 30px;
-  background-color: lightgrey;
-  overflow: hidden;
-  display: block;
-}
-#navbar {
-    background-color: white;
-}
-
-a:hover {
-  background: lighten(#333, 10%);
-}
-/*Header*/
-.entete {
-  text-align: center;
-  background: rgb(123, 168, 211);
-  border-color: black;
-  border-style: double;
-}
 /*Card*/
 .grid-x {
   justify-content: center;
