@@ -1,4 +1,25 @@
 
+/* General styles */
+body{
+background: url(rice-with-zucchini-soft-boiled-egg-and-parsley-in-green-1410235.jpg) 50% no-repeat;
+}
+/* NavBar*/
+
+.menu {
+  font-family: "Lobster", cursive;
+  font-size: 30px;
+  overflow: hidden;
+  display: block;
+}
+#navbar {
+    background-color: white;
+}
+
+a:hover {
+  background: lighten(#333, 10%);
+}
+/*Header*/
+
 .hero-section {
     background: url(rice-with-zucchini-soft-boiled-egg-and-parsley-in-green-1410235.jpg) 50% no-repeat;
     opacity: 60%;
@@ -20,46 +41,45 @@
     color: #fefefe;
     text-shadow: 1px 1px 2px #0a0a0a;
   }
-  
-  
-.menu {
-    font-family: 'Lobster', cursive;
-    font-size: 25px;
 
-}
-:hover {
-        background: lighten(#333, 10%);
-    }
-.entete {
-    text-align: center;
-    background: rgb(123, 168, 211);   
-}
+/*Card*/
 .grid-x {
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  
 }
-img{
-    width: 600px;
-    height: 300px;
-}
-.card {
+
+.cell {
     border-style: double;
-
+    border-width: 10px;
 
 }
-.card-section{
-    background: rgb(123, 168, 211);
+
+.card-section {
+  background: rgb(123, 168, 211);
 }
 
-.card{
-    background-color: rgb(123, 168, 211);;
+.card {
+  background-color: rgb(123, 168, 211);
+  margin-bottom: 0px !important;
 }
 
-.card-divider{
-    justify-content: center;
-      
+.card-divider {
+  justify-content: center;
+}
+
+/*Image from the card*/
+.fluid {
+    max-width: 600px;
+    width: 100%;
+  }
+/*Button*/
+#btn {
+    background-color: lightgray ;
+    color: black;
+    font-weight: bolder;
+    border-color: black;
 }
 
 
