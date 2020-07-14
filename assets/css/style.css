@@ -1,25 +1,56 @@
 
 /* General styles */
-body{
-background: url(rice-with-zucchini-soft-boiled-egg-and-parsley-in-green-1410235.jpg) 50% no-repeat;
-}
+.bgimage {
+    position: relative;
+  }
+.bgimage::before {    
+    content: "";
+    background-image: url(rice-with-zucchini-soft-boiled-egg-and-parsley-in-green-1410235.jpg) !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.75;
+    z-index: -1;
+  }
+
 /* NavBar*/
 
 .menu {
   font-family: "Lobster", cursive;
-  font-size: 30px;
+  font-size: 25px;
   overflow: hidden;
   display: block;
+  background-color: #27390E;
+  opacity: 0.75;  
 }
-#navbar {
-    background-color: white;
+.menu a{
+    color: #fefefe !important;
+    text-shadow: 2px 2px black;
 }
+
 
 a:hover {
-  background: lighten(#333, 10%);
+  background: lighten(white, 50%);
 }
 /*Header*/
-
+.entete {
+    padding-top: 25px;
+    text-align: center;
+    opacity: 70%; 
+    color: #27390E;
+    word-spacing: 10px;
+    text-shadow: 2px 2px #E4D386;
+    
+}
+.entete h1 {
+    font-family: 'Fira Sans', sans-serif !important;
+}
+/*Header contact.html*/
 .hero-section {
     background: url(rice-with-zucchini-soft-boiled-egg-and-parsley-in-green-1410235.jpg) 50% no-repeat;
     opacity: 60%;
@@ -47,27 +78,38 @@ a:hover {
   justify-content: center;
   display: flex;
   flex-direction: row;
-  
 }
 
 .cell {
     border-style: double;
     border-width: 10px;
-
+    opacity: 90%;
+    border-color: black;
 }
 
 .card-section {
-  background: rgb(123, 168, 211);
+  background: #AAB1AB;
+  
 }
 
 .card {
-  background-color: rgb(123, 168, 211);
   margin-bottom: 0px !important;
 }
 
 .card-divider {
   justify-content: center;
+  background-color:white !important;
+  color: #27390E;
 }
+/*Header card*/
+.card-divider h4 {
+    font-family: 'Merienda One', cursive;
+    font-size: 25px;
+    text-shadow: 2px 2px #E4D386;
+}
+
+
+
 
 /*Image from the card*/
 .fluid {
@@ -76,11 +118,26 @@ a:hover {
   }
 /*Button*/
 #btn {
-    background-color: lightgray ;
+    background-color: #D7DCE5 ;
+    font-weight: bolder;   
+    border: 2px solid black;
     color: black;
-    font-weight: bolder;
-    border-color: black;
 }
+
+/*Footer*/
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #27390E;
+    color: white;
+    text-align: center;
+    opacity: 0.75;
+    font-weight: bolder;
+    margin-bottom: 0;
+    margin-top: 50px;
+ }
+
 
 
 
