@@ -1,41 +1,65 @@
+/* General styles */
+
+/* NavBar*/
 .menu {
-    font-family: 'Lobster', cursive;
-    font-size: 25px;
-
+  font-family: "Lobster", cursive;
+  font-size: 30px;
+  background-color: lightgrey;
+  overflow: hidden;
+  display: block;
 }
-:hover {
-        background: lighten(#333, 10%);
-    }
+#navbar {
+    background-color: white;
+}
+
+a:hover {
+  background: lighten(#333, 10%);
+}
+/*Header*/
 .entete {
-    text-align: center;
-    background: rgb(123, 168, 211);   
+  text-align: center;
+  background: rgb(123, 168, 211);
+  border-color: black;
+  border-style: double;
 }
+/*Card*/
 .grid-x {
-    justify-content: center;
-    display: flex;
-    flex-direction: row;
-    
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  
 }
-img{
-    width: 600px;
-    height: 300px;
-}
-.card {
+
+.cell {
     border-style: double;
-
+    border-width: 10px;
 
 }
-.card-section{
-    background: rgb(123, 168, 211);
+
+.card-section {
+  background: rgb(123, 168, 211);
 }
 
-.card{
-    background-color: rgb(123, 168, 211);;
+.card {
+  background-color: rgb(123, 168, 211);
+  margin-bottom: 0px !important;
 }
 
-.card-divider{
-    justify-content: center;
-      
+.card-divider {
+  justify-content: center;
+}
+
+/*Image from the card*/
+.fluid {
+    max-width: 600px;
+    width: 100%;
+  }
+/*Button*/
+#btn {
+    background-color: lightgray ;
+    color: black;
+    font-weight: bolder;
+    border-color: black;
 }
 
 
