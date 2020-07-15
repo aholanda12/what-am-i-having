@@ -1,4 +1,5 @@
 /* General styles */
+/*INDEX PAGE*/
 .bgimage {
   position: relative;
 }
@@ -107,13 +108,16 @@ color: #27390E;
   text-shadow: 2px 2px #E4D386;
 }
 
-
-
 /*Image from the card*/
 .fluid {
   max-width: 600px;
   width: 100%;
 }
+/*Heating 6*/
+h6{
+  font-weight: bolder !important;
+}
+
 /*Button*/
 #generate-meal {
   background-color: #AAB1AB ;
@@ -121,7 +125,6 @@ color: #27390E;
   color: black;
   
 }
-
 
 /*Footer*/
 .footer {
@@ -137,7 +140,6 @@ color: #27390E;
   margin-top: 50px;
 }
 
-=======
 
 /*Image from the card*/
 .fluid {
@@ -152,6 +154,7 @@ color: #27390E;
     
 }
 
+/*MENU & RECIPES CARDS*/
 
 /*Footer*/
 .footer {
@@ -174,10 +177,7 @@ color: #27390E;
   font-family: 'Fira Sans', sans-serif;
   color: #27390E ;
 }
-   text-align: center;
-   font-family: 'Fira Sans', sans-serif;
-   color: #27390E ;
- }
+
 
 
 
