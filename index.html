@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>What Am I Having?</title>
+
+    <script src="https://kit.fontawesome.com/ca89a4b9f5.js" crossorigin="anonymous"></script>
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@1,900&display=swap" rel="stylesheet">
@@ -33,6 +35,7 @@
           <h1><strong>WHAT AM I EATING TODAY?</strong></h1>
       </div>
         </header>
+
 
 <br>
     <div class="grid-container">
@@ -76,7 +79,6 @@
                   <option>Olive Oil</option>
                   <option>Milk</option>
                 </select>
-                <a class="button float-right" id ="btn" href="#">Generate Meal</a>
               </div>
             </div>
           </div>
@@ -116,18 +118,62 @@
                   <option>Rum</option>
                   <option>Tequila</option>
                 </select>
-  
-                <a class="button float-right" id="btn" href="#">Generate Drink</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
+        <br>
+        <div class="row">
+          <div class="small-6 small-centered text-center columns">
+              <a class="button large" id="generate-meal" href="#" class="button">Generate Meal</a>
+          </div>
+        </div>
+      <br>
+      <br>
+    
 
+    <div class="grid-container">
+      <div class="grid-x grid-margin-x small-up-2 medium-up-2">
+        <div class="cell">
+          <div class="card">
+            <div class="card-section">
+              <section>
+                <div id="meal-name"></div>
+                <img id="meal-pic">
+                <p id="meal-category"></p>
+                <p id="meal-area"></p>
+                <h3>Ingredients</h3>
+                <ul id="meal-ingredients"></ul>
+                <h3>Recipe</h3>
+                <p id="meal-recipe"></p>
+            </section>
+            </div>
+          </div>
+        </div>
+        <div class="cell">
+          <div class="card">
+            <div class="card-section">
+              <section>
+                <div id="drink-name"></div>
+                <img id="drink-pic">
+                <p id="drink-category"></p>
+                <p id="drink-alcohol"></p>
+                <h3>Ingredients</h3>
+                <ul id="drink-ingredients"></ul>
+                <h3>Recipe</h3>
+                <p id="drink-recipe"></p>
+            </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
         <footer class="footer">
           &copy;2020 Team 5
         </footer>
+        </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="assets/js/script.js" defer></script>
