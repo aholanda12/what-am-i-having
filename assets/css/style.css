@@ -1,113 +1,143 @@
-
 /* General styles */
 .bgimage {
-    position: relative;
-  }
+  position: relative;
+}
 .bgimage::before {    
-    content: "";
-    background-image: url(rice-with-zucchini-soft-boiled-egg-and-parsley-in-green-1410235.jpg) !important;
-    background-repeat: no-repeat !important;
-    background-size: cover !important;
-    background-position: center !important;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-    opacity: 0.75;
-    z-index: -1;
-  }
+  content: "";
+  background-image: url(rice-with-zucchini-soft-boiled-egg-and-parsley-in-green-1410235.jpg) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.75;
+  z-index: -1;
+}
 
 /* NavBar*/
 
 .menu {
-  font-family: "Lobster", cursive;
-  font-size: 25px;
-  overflow: hidden;
-  display: block;
-  background-color: #27390E;
-  opacity: 0.75;  
+font-family: "Lobster", cursive;
+font-size: 25px;
+overflow: hidden;
+display: block;
+background-color: #27390E;
+opacity: 0.75;  
 }
 .menu a{
-    color: #fefefe !important;
-    text-shadow: 2px 2px black;
+  color: #fefefe !important;
+  text-shadow: 2px 2px black;
 }
 
 
 a:hover {
-  background: lighten(white, 50%);
+background: lighten(white, 50%);
 }
 /*Header*/
 .entete {
-    padding-top: 25px;
-    text-align: center;
-    opacity: 70%; 
-    color: #27390E;
-    word-spacing: 10px;
-    text-shadow: 2px 2px #E4D386;
-    
+  padding-top: 25px;
+  text-align: center;
+  opacity: 70%; 
+  color: #27390E;
+  word-spacing: 10px;
+  text-shadow: 2px 2px #E4D386;
+  
 }
 .entete h1 {
-    font-family: 'Fira Sans', sans-serif !important;
+  font-family: 'Fira Sans', sans-serif !important;
 }
 /*Header contact.html*/
 .hero-section {
-    background: url(rice-with-zucchini-soft-boiled-egg-and-parsley-in-green-1410235.jpg) 50% no-repeat;
-    opacity: 60%;
-    background-size: cover;
-    height: 20vh;
-    text-align: center;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  
-  .hero-section .hero-section-text {
-    color: #fefefe;
-    text-shadow: 1px 1px 2px #0a0a0a;
-  }
+  background: url(rice-with-zucchini-soft-boiled-egg-and-parsley-in-green-1410235.jpg) 50% no-repeat;
+  opacity: 60%;
+  background-size: cover;
+  height: 20vh;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero-section .hero-section-text {
+  color: #fefefe;
+  text-shadow: 1px 1px 2px #0a0a0a;
+}
 
 /*Card*/
 .grid-x {
-  justify-content: center;
-  display: flex;
-  flex-direction: row;
+justify-content: center;
+display: flex;
+flex-direction: row;
 }
 
 .cell {
-    border-style: double;
-    border-width: 10px;
-    opacity: 90%;
-    border-color: black;
+  border-style: double;
+  border-width: 10px;
+  opacity: 90%;
+  border-color: black;
 }
 
 .card-section {
-  background: #AAB1AB;
-  
+background: #AAB1AB;
+
 }
 
 .card {
-  margin-bottom: 0px !important;
+margin-bottom: 0px !important;
 }
 
 .card-divider {
-  justify-content: center;
-  background-color:white !important;
-  color: #27390E;
+justify-content: center;
+background-color:white !important;
+color: #27390E;
 }
 /*Header card*/
 .card-divider h4 {
-    font-family: 'Merienda One', cursive;
-    font-size: 25px;
-    text-shadow: 2px 2px #E4D386;
+  font-family: 'Merienda One', cursive;
+  font-size: 25px;
+  text-shadow: 2px 2px #E4D386;
 }
 
+
+
+/*Image from the card*/
+.fluid {
+  max-width: 600px;
+  width: 100%;
+}
+/*Button*/
+#generate-meal {
+  background-color: #AAB1AB ;
+  font-weight: bolder; 
+  color: black;
+  
+}
+
+
+/*Footer*/
+.footer {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #27390E;
+  color: white;
+  text-align: center;
+  opacity: 0.75;
+  font-weight: bolder;
+  margin-bottom: 0;
+  margin-top: 50px;
+}
+
+=======
 
 /*Image from the card*/
 .fluid {
@@ -139,10 +169,16 @@ a:hover {
 
  /*TEAM MEMBERS PAGE*/
  .team-members h4{
+
+  text-align: center;
+  font-family: 'Fira Sans', sans-serif;
+  color: #27390E ;
+}
    text-align: center;
    font-family: 'Fira Sans', sans-serif;
    color: #27390E ;
  }
+
 
 
 
