@@ -13,6 +13,9 @@ var drinkAlcoholChoice = "";
 var drinkIngredientArray = [];
 var drinkIngredientChoice = "";
 
+var mealMatches = [];
+var drinkMatches = [];
+
 // Grabbing the array for Meal Category
 function chooseMealCategory() {
     mealCategoryChoice = $("#meal-category-choice").val();
@@ -30,7 +33,7 @@ function chooseMealCategory() {
             mealCategoryArray.push(mealCategory[i].idMeal);
         }
 
-        // console.log(mealCategoryArray);
+        console.log(mealCategoryArray);
     });
 }
 
@@ -51,7 +54,7 @@ function chooseMealArea() {
             mealAreaArray.push(mealArea[i].idMeal);
         }
 
-        // console.log(mealAreaArray);
+        console.log(mealAreaArray);
     });
 }
 
@@ -72,7 +75,7 @@ function chooseMealIngredient() {
             mealIngredientArray.push(mealIngredient[i].idMeal);
         }
 
-        // console.log(mealIngredientArray);
+        console.log(mealIngredientArray);
     });
 }
 
@@ -245,14 +248,30 @@ function produceFinalDrink() {
     });
 }
 
+
+function getMealMatch(a, b, c) {
+
+    for ( var o = 0; o < a.length; o++ ) {
+        for ( var p = 0; p < b.length; p++ ) {
+            for ( var q = 0; q < c.length; q++ ) {
+                if ( a[o] === b[p] && b[p] === c[q] ) mealMatches.push( a[o] );
+        }
+    }
+}
+    console.log(mealMatches);
+    return mealMatches;
+}
+
+
 $("#generate-meal").on("click", function (event) {
     event.preventDefault();
-    // chooseMealCategory();
-    // chooseMealArea();
-    // chooseMealIngredient();
+    chooseMealCategory();
+    chooseMealArea();
+    chooseMealIngredient();
+    getMealMatch(mealCategoryArray, mealAreaArray, mealIngredientArray);
     // chooseDrinkCategory();
     // chooseDrinkAlcohol();
     // chooseDrinkIngredient();
-    produceFinalMeal();
-    produceFinalDrink();
+    // produceFinalMeal();
+    // produceFinalDrink();
 });

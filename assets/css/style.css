@@ -108,6 +108,7 @@ color: #27390E;
 }
 
 
+
 /*Image from the card*/
 .fluid {
   max-width: 600px;
@@ -136,18 +137,21 @@ color: #27390E;
   margin-top: 50px;
 }
 
+=======
+
 /*Image from the card*/
 .fluid {
     max-width: 600px;
     width: 100%;
   }
 /*Button*/
-#btn {
-    background-color: #D7DCE5 ;
-    font-weight: bolder;   
-    border: 2px solid black;
+#generate-meal {
+    background-color: #AAB1AB ;
+    font-weight: bolder; 
     color: black;
+    
 }
+
 
 /*Footer*/
 .footer {
@@ -165,10 +169,16 @@ color: #27390E;
 
  /*TEAM MEMBERS PAGE*/
  .team-members h4{
+
   text-align: center;
   font-family: 'Fira Sans', sans-serif;
   color: #27390E ;
 }
+   text-align: center;
+   font-family: 'Fira Sans', sans-serif;
+   color: #27390E ;
+ }
+
 
 
 
