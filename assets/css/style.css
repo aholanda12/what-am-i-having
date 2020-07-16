@@ -141,6 +141,12 @@ min-width: 300px !important;;
   background-image: -ms-linear-gradient(bottom, rgb(247, 247, 247) 0%, rgb(247, 247, 247) 100%);
 }
 
+.btnleft{
+  margin-right: 48px !important;
+}
+.btnright{
+  margin-right: 15px !important;
+}
 /*Footer*/
 .footer {
   left: 0;
