@@ -33,19 +33,14 @@ opacity: 0.75;
   text-shadow: 2px 2px black;
 }
 
-
-a:hover {
-background: lighten(white, 50%);
-}
 /*Header*/
 .entete {
   padding-top: 25px;
   text-align: center;
   opacity: 70%; 
   color: #27390E;
-  word-spacing: 10px;
-  text-shadow: 2px 2px #E4D386;
-  
+  word-spacing: 40px !important;
+  text-shadow: 2px 2px #E4D386; 
 }
 .entete h1 {
   font-family: 'Fira Sans', sans-serif !important;
@@ -89,7 +84,6 @@ flex-direction: row;
 
 .card-section {
 background: #AAB1AB;
-
 }
 
 .card {
@@ -101,6 +95,11 @@ justify-content: center;
 background-color:white !important;
 color: #27390E;
 }
+.card-divider h4 {
+  font-size: 25px !important;
+}
+/*Options*/
+
 /*Header card*/
 .card-divider h4 {
   font-family: 'Merienda One', cursive;
@@ -116,14 +115,30 @@ color: #27390E;
 /*Heating 6*/
 h6{
   font-weight: bolder !important;
+  font-style: italic !important;
+  text-shadow: 1px 1px white;
 }
 
 /*Button*/
 #generate-meal {
   background-color: #AAB1AB ;
-  font-weight: bolder; 
-  color: black;
-  
+  font-style: italic;
+  color: black; 
+}
+.button {
+border: 3px double black !important;
+border-color: black !important;
+border-width: 10px !important;
+border-radius: 30px !important;
+padding: 20px 70px !important;
+min-width: 300px !important;;
+}
+.button:hover {
+  background-image: linear-gradient(bottom, rgb(247, 247, 247) 0%, rgb(247, 247, 247) 100%) !important;
+  background-image: -o-linear-gradient(bottom, rgb(247, 247, 247) 0%, rgb(247, 247, 247)100%)!important;
+  background-image: -moz-linear-gradient(bottom, rgb(247, 247, 247) 0%, rgb(247, 247, 247) 100%)!important;
+  background-image: -webkit-linear-gradient(bottom, rgb(247, 247, 247) 0%, rgb(247, 247, 247) 100%)!important;
+  background-image: -ms-linear-gradient(bottom, rgb(247, 247, 247) 0%, rgb(247, 247, 247) 100%);
 }
 
 /*Footer*/
@@ -140,42 +155,18 @@ h6{
   margin-top: 50px;
 }
 
-
-/*Image from the card*/
-.fluid {
-    max-width: 600px;
-    width: 100%;
-  }
-/*Button*/
-#generate-meal {
-    background-color: #AAB1AB ;
-    font-weight: bolder; 
-    color: black;
-    
-}
-
 /*MENU & RECIPES CARDS*/
-
-/*Footer*/
-.footer {
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: #27390E;
-    color: white;
-    text-align: center;
-    opacity: 0.75;
-    font-weight: bolder;
-    margin-bottom: 0;
-    margin-top: 50px;
- }
-
+h3 {
+  font-family: fantasy !important;
+  font-size: 25px !important;
+  font-weight: bolder !important;
+  text-decoration: underline; 
+}
  /*TEAM MEMBERS PAGE*/
  .team-members h4{
-
-  text-align: center;
-  font-family: 'Fira Sans', sans-serif;
-  color: #27390E ;
+    text-align: center;
+    font-family: 'Fira Sans', sans-serif;
+    color: #27390E ;
 }
 
 
