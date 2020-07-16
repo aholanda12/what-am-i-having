@@ -119,12 +119,7 @@ h6{
   text-shadow: 1px 1px white;
 }
 
-/*Button*/
-#generate-meal {
-  background-color: #AAB1AB ;
-  font-style: italic;
-  color: black; 
-}
+/*BUTTON*/
 .button {
 border: 3px double black !important;
 border-color: black !important;
@@ -132,6 +127,8 @@ border-width: 10px !important;
 border-radius: 30px !important;
 padding: 20px 70px !important;
 min-width: 300px !important;;
+background-color: #AAB1AB !important;
+font-style: italic; 
 }
 .button:hover {
   background-image: linear-gradient(bottom, rgb(247, 247, 247) 0%, rgb(247, 247, 247) 100%) !important;
@@ -140,7 +137,14 @@ min-width: 300px !important;;
   background-image: -webkit-linear-gradient(bottom, rgb(247, 247, 247) 0%, rgb(247, 247, 247) 100%)!important;
   background-image: -ms-linear-gradient(bottom, rgb(247, 247, 247) 0%, rgb(247, 247, 247) 100%);
 }
-
+/*Generate Meal button*/
+.btnleft{
+  margin-right: 48px !important;
+}
+/*Refresh button*/
+.btnright{
+  margin-right: 15px !important;
+}
 /*Footer*/
 .footer {
   left: 0;
