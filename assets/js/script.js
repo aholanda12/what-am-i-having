@@ -416,11 +416,12 @@ function checkCriteria() {
 }
 
 function errorMessage() {
-    alert("Please fill out all fields");
+    $("#error-message").text("Please enter all fields.");
 }
 
 
 $('.btnleft').hide()
+$(".myDisplayBlock").hide();
 $("#generate-meal").on("click", function (event) {
     event.preventDefault();
     checkCriteria()
@@ -456,7 +457,8 @@ $("#generate-meal").on("click", function (event) {
     chooseDrinkIngredient(amIdoneDrink);
     $('.btnleft').show();
     $('.btnright').hide();
-    $(".myDIV").css("display", "block");
+    $('#error-message').hide();
+    $(".myDisplayBlock").show();
 
 }
 });
