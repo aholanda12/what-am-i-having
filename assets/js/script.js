@@ -454,5 +454,7 @@ $("#generate-meal").on("click", function (event) {
     chooseDrinkCategory(amIdoneDrink);
     chooseDrinkAlcohol(amIdoneDrink);
     chooseDrinkIngredient(amIdoneDrink);
+
 }
 });
+
