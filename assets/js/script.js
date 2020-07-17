@@ -37,10 +37,10 @@ function chooseMealCategory(callback) {
             // console.log(mealCategory[i]);
             mealCategoryArray.push(mealCategory[i].idMeal);
             // console.log(mealCategory[i]);
-            if(mealCollection.hasOwnProperty("id" + mealCategory[i].idMeal) === false){
+            if (mealCollection.hasOwnProperty("id" + mealCategory[i].idMeal) === false) {
                 // no id yet
                 mealCollection["id" + mealCategory[i].idMeal] = {
-                    id:  mealCategory[i].idMeal
+                    id: mealCategory[i].idMeal
                 }
             }
             // any meal should exist at this point
@@ -69,10 +69,10 @@ function chooseMealArea(callback) {
         for (var i = 0; i < mealArea.length; i++) {
             // console.log(mealArea[i]);
             mealAreaArray.push(mealArea[i].idMeal);
-            if(mealCollection.hasOwnProperty("id" + mealArea[i].idMeal) === false){
+            if (mealCollection.hasOwnProperty("id" + mealArea[i].idMeal) === false) {
                 // no id yet
                 mealCollection["id" + mealArea[i].idMeal] = {
-                    id:  mealArea[i].idMeal
+                    id: mealArea[i].idMeal
                 }
             }
             // any meal should exist at this point
@@ -100,10 +100,10 @@ function chooseMealIngredient(callback) {
         for (var i = 0; i < mealIngredient.length; i++) {
             // console.log(mealIngredient[i]);
             mealIngredientArray.push(mealIngredient[i].idMeal);
-            if(mealCollection.hasOwnProperty("id" + mealIngredient[i].idMeal) === false){
+            if (mealCollection.hasOwnProperty("id" + mealIngredient[i].idMeal) === false) {
                 // no id yet
                 mealCollection["id" + mealIngredient[i].idMeal] = {
-                    id:  mealIngredient[i].idMeal
+                    id: mealIngredient[i].idMeal
                 }
             }
             // any meal should exist at this point
@@ -131,9 +131,9 @@ function chooseDrinkCategory(callback) {
         for (var i = 0; i < drinkCategory.length; i++) {
             // console.log(drinkCategory[i]);
             drinkCategoryArray.push(drinkCategory[i].idDrink);
-            if(drinkCollection.hasOwnProperty("id" + drinkCategory[i].idDrink) === false){
+            if (drinkCollection.hasOwnProperty("id" + drinkCategory[i].idDrink) === false) {
                 drinkCollection["id" + drinkCategory[i].idDrink] = {
-                    id:  drinkCategory[i].idDrink
+                    id: drinkCategory[i].idDrink
                 }
             }
             drinkCollection["id" + drinkCategory[i].idDrink].drinkCategoryApi = drinkCategory[i];
@@ -160,9 +160,9 @@ function chooseDrinkAlcohol(callback) {
         for (var i = 0; i < drinkAlcohol.length; i++) {
             // console.log(drinkAlcohol[i]);
             drinkAlcoholArray.push(drinkAlcohol[i].idDrink);
-            if(drinkCollection.hasOwnProperty("id" + drinkAlcohol[i].idDrink) === false){
+            if (drinkCollection.hasOwnProperty("id" + drinkAlcohol[i].idDrink) === false) {
                 drinkCollection["id" + drinkAlcohol[i].idDrink] = {
-                    id:  drinkAlcohol[i].idDrink
+                    id: drinkAlcohol[i].idDrink
                 }
             }
             drinkCollection["id" + drinkAlcohol[i].idDrink].drinkAlcoholApi = drinkAlcohol[i];
@@ -189,9 +189,9 @@ function chooseDrinkIngredient(callback) {
             for (var i = 0; i < drinkIngredient.length; i++) {
                 // console.log(drinkIngredient[i]);
                 drinkIngredientArray.push(drinkIngredient[i].idDrink);
-                if(drinkCollection.hasOwnProperty("id" + drinkIngredient[i].idDrink) === false){
+                if (drinkCollection.hasOwnProperty("id" + drinkIngredient[i].idDrink) === false) {
                     drinkCollection["id" + drinkIngredient[i].idDrink] = {
-                        id:  drinkIngredient[i].idDrink
+                        id: drinkIngredient[i].idDrink
                     }
                 }
                 drinkCollection["id" + drinkIngredient[i].idDrink].drinkIngredientApi = drinkIngredient[i];
@@ -208,189 +208,193 @@ function chooseDrinkIngredient(callback) {
 
 // Generating the chosen meal
 function produceFinalMeal() {
-    var finalMealNumber = mealMatches[Math.floor(Math.random() * mealMatches.length)].id;
-    var queryURL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + finalMealNumber;
+    if (mealMatches = []) {
+        $("#meal-match-message").text("We're sorry, we couldn't find a meal matching any of your criteria. Please try again.");
+    }
+    else {
+        var finalMealNumber = mealMatches[Math.floor(Math.random() * mealMatches.length)].id;
+        var queryURL = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + finalMealNumber;
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response.meals);
-        var finalMeal = response.meals;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response.meals);
+            var finalMeal = response.meals;
 
-        for (let i = 0; i < finalMeal.length; i++) {
-            var mealName = $("<h2>").text(finalMeal[i].strMeal);
-            $("#meal-name").empty();
-            $("#meal-name").append(mealName);
+            for (let i = 0; i < finalMeal.length; i++) {
+                var mealName = $("<h2>").text(finalMeal[i].strMeal);
+                $("#meal-name").empty();
+                $("#meal-name").append(mealName);
 
-            var mealPic = finalMeal[i].strMealThumb;
-            $("#meal-pic").attr(
-                "src",
-                mealPic
-            );
+                var mealPic = finalMeal[i].strMealThumb;
+                $("#meal-pic").attr(
+                    "src",
+                    mealPic
+                );
 
-            $("#meal-category").text("Category: " + finalMeal[i].strCategory);
-            $("#meal-area").text("Area: " + finalMeal[i].strArea);
-            $("#meal-recipe").text(finalMeal[i].strInstructions);
+                $("#meal-category").text("Category: " + finalMeal[i].strCategory);
+                $("#meal-area").text("Area: " + finalMeal[i].strArea);
+                $("#meal-recipe").text(finalMeal[i].strInstructions);
 
-            var arr = Object.entries(finalMeal[i]);
-            var measurements = [];
-            var ingredients = [];
+                var arr = Object.entries(finalMeal[i]);
+                var measurements = [];
+                var ingredients = [];
 
-            for (var j = 0; j < arr.length; j++) {
-                if (arr[j][0].substr(0, "strIngredient".length) === 'strIngredient') {
-                    ingredients.push(arr[j][1])
+                for (var j = 0; j < arr.length; j++) {
+                    if (arr[j][0].substr(0, "strIngredient".length) === 'strIngredient') {
+                        ingredients.push(arr[j][1])
+                    }
+                    if (arr[j][0].substr(0, "strMeasure".length) === 'strMeasure') {
+                        measurements.push(arr[j][1])
+                    }
                 }
-                if (arr[j][0].substr(0, "strMeasure".length) === 'strMeasure') {
-                    measurements.push(arr[j][1])
+
+                for (var k = 0; k < ingredients.length; k++) {
+                    if (measurements[k] !== null && measurements[k] !== "" && measurements[k] !== " ") {
+                        var ingredientList = $("<li>");
+                        ingredientList.text(measurements[k] + " " + ingredients[k]);
+                        $("#meal-ingredients").append(ingredientList);
+                    }
                 }
+
             }
-
-            for (var k = 0; k < ingredients.length; k++) {
-                if (measurements[k] !== null && measurements[k] !== "" && measurements[k] !== " ") {
-                    var ingredientList = $("<li>");
-                    ingredientList.text(measurements[k] + " " + ingredients[k]);
-                    $("#meal-ingredients").append(ingredientList);
-                }
-            }
-
-        }
-    });
+        });
+    }
 }
 
 
 // Generating the chosen drink
 function produceFinalDrink() {
-    var finalDrinkNumber = drinkMatches[Math.floor(Math.random() * drinkMatches.length)].id;
-    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + finalDrinkNumber;
+    if (drinkMatches = []) {
+        $("#drink-match-message").text("We're sorry, we couldn't find a drink matching any of your criteria. Please try again.");
+    }
+    else {
+        var finalDrinkNumber = drinkMatches[Math.floor(Math.random() * drinkMatches.length)].id;
+        var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + finalDrinkNumber;
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response.drinks);
-        var finalDrink = response.drinks;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response.drinks);
+            var finalDrink = response.drinks;
 
-        for (let l = 0; l < finalDrink.length; l++) {
-            var drinkName = $("<h2>").text(finalDrink[l].strDrink);
-            $("#drink-name").empty();
-            $("#drink-name").append(drinkName);
+            for (let l = 0; l < finalDrink.length; l++) {
+                var drinkName = $("<h2>").text(finalDrink[l].strDrink);
+                $("#drink-name").empty();
+                $("#drink-name").append(drinkName);
 
-            var drinkPic = finalDrink[l].strDrinkThumb;
-            $("#drink-pic").attr(
-                "src",
-                drinkPic
-            );
+                var drinkPic = finalDrink[l].strDrinkThumb;
+                $("#drink-pic").attr(
+                    "src",
+                    drinkPic
+                );
 
-            $("#drink-category").text("Category: " + finalDrink[l].strCategory);
-            $("#drink-alcohol").text("Alcohol Content: " + finalDrink[l].strAlcoholic);
-            $("#drink-recipe").text(finalDrink[l].strInstructions);
+                $("#drink-category").text("Category: " + finalDrink[l].strCategory);
+                $("#drink-alcohol").text("Alcohol Content: " + finalDrink[l].strAlcoholic);
+                $("#drink-recipe").text(finalDrink[l].strInstructions);
 
-            var drinkArr = Object.entries(finalDrink[l]);
-            var drinkMeasurements = [];
-            var drinkIngredients = [];
+                var drinkArr = Object.entries(finalDrink[l]);
+                var drinkMeasurements = [];
+                var drinkIngredients = [];
 
-            for (var m = 0; m < drinkArr.length; m++) {
-                if (drinkArr[m][0].substr(0, "strIngredient".length) === 'strIngredient') {
-                    drinkIngredients.push(drinkArr[m][1])
+                for (var m = 0; m < drinkArr.length; m++) {
+                    if (drinkArr[m][0].substr(0, "strIngredient".length) === 'strIngredient') {
+                        drinkIngredients.push(drinkArr[m][1])
+                    }
+                    if (drinkArr[m][0].substr(0, "strMeasure".length) === 'strMeasure') {
+                        drinkMeasurements.push(drinkArr[m][1])
+                    }
                 }
-                if (drinkArr[m][0].substr(0, "strMeasure".length) === 'strMeasure') {
-                    drinkMeasurements.push(drinkArr[m][1])
+
+                for (var n = 0; n < drinkIngredients.length; n++) {
+                    if (drinkMeasurements[n] !== null && drinkMeasurements[n] !== "" && drinkMeasurements[n] !== " ") {
+                        var drinkIngredientList = $("<li>");
+                        drinkIngredientList.text(drinkMeasurements[n] + " " + drinkIngredients[n]);
+                        $("#drink-ingredients").append(drinkIngredientList);
+                    }
                 }
+
             }
-
-            for (var n = 0; n < drinkIngredients.length; n++) {
-                if (drinkMeasurements[n] !== null && drinkMeasurements[n] !== "" && drinkMeasurements[n] !== " ") {
-                    var drinkIngredientList = $("<li>");
-                    drinkIngredientList.text(drinkMeasurements[n] + " " + drinkIngredients[n]);
-                    $("#drink-ingredients").append(drinkIngredientList);
-                }
-            }
-
-        }
-    });
+        });
+    }
 }
 
 function getMealMatch() {
 
-    // for (var o = 0; o < a.length; o++) {
-    //     for (var p = 0; p < b.length; p++) {
-    //         for (var q = 0; q < c.length; q++) {
-    //             if (a[o] === b[p] && b[p] === c[q]) {
-    //                 mealMatches.push(a[o]);
-    //                 $("#meal-match-message").text("Here is a meal based off all three of your criteria");
-    //             }
-    //             else if (a[o] === b[p]) {
-    //                 mealMatches.push(a[o]);
-    //                 $("#meal-match-message").text("We're sorry, we couldn't find a meal matching all three of your criteria. Here is a meal based off your CATEGORY and AREA");
-    //             }
-    //             else if (b[p] === c[q]) {
-    //                 mealMatches.push(a[o]);
-    //                 $("#meal-match-message").text("We're sorry, we couldn't find a meal matching all three of your criteria. Here is a meal based off your INGREDIENT and AREA");
-    //             }
-    //             else if (a[o] === c[q]) {
-    //                 mealMatches.push(a[o]);
-    //                 $("#meal-match-message").text("We're sorry, we couldn't find a meal matching all three of your criteria. Here is a meal based off your CATEGORY and INGREDIENT");
-    //             }
-    //             else {
-    //                 $("#meal-match-message").text("We're sorry, we couldn't find a meal matching any of your criteria. Please try again.");
-    //             }
-    //         }
-    //     }
-    // }
-    // console.log(mealMatches);
-
     var allMeals = Object.entries(mealCollection);
-    for(var i = 0; i < allMeals.length; i++){
-        if(mealCollection[allMeals[i][0]].hasOwnProperty("mealCategoryApi")){
-            if(mealCollection[allMeals[i][0]].hasOwnProperty("mealAreaApi")){
-                if(mealCollection[allMeals[i][0]].hasOwnProperty("mealIngredientApi")){
-                mealMatches.push(allMeals[i][1])
+    for (var i = 0; i < allMeals.length; i++) {
+        if (mealCollection[allMeals[i][0]].hasOwnProperty("mealCategoryApi")) {
+            if (mealCollection[allMeals[i][0]].hasOwnProperty("mealAreaApi")) {
+                if (mealCollection[allMeals[i][0]].hasOwnProperty("mealIngredientApi")) {
+                    mealMatches.push(allMeals[i][1])
+                    $("#meal-match-message").text("Here is a meal based off all three of your criteria");
                 }
             }
-        }  
+        }
+
+        else if (mealCollection[allMeals[i][0]].hasOwnProperty("mealCategoryApi")) {
+            if (mealCollection[allMeals[i][0]].hasOwnProperty("mealIngredientApi")) {
+                mealMatches.push(allMeals[i][1])
+                $("#meal-match-message").text("We're sorry, we couldn't find a meal matching all three of your criteria. Here is a meal based off your CATEGORY and INGREDIENT");
+            }
+        }
+
+        else if (mealCollection[allMeals[i][0]].hasOwnProperty("mealCategoryApi")) {
+            if (mealCollection[allMeals[i][0]].hasOwnProperty("mealAreaApi")) {
+                mealMatches.push(allMeals[i][1])
+                $("#meal-match-message").text("We're sorry, we couldn't find a meal matching all three of your criteria. Here is a meal based off your CATEGORY and AREA");
+            }
+        }
+
+        else if (mealCollection[allMeals[i][0]].hasOwnProperty("mealAreaApi")) {
+            if (mealCollection[allMeals[i][0]].hasOwnProperty("mealIngredientApi")) {
+                mealMatches.push(allMeals[i][1])
+                $("#meal-match-message").text("We're sorry, we couldn't find a meal matching all three of your criteria. Here is a meal based off your INGREDIENT and AREA");
+            }
+        }
     }
 }
 
 
 function getDrinkMatch(a, b, c) {
 
-    // for (var o = 0; o < a.length; o++) {
-    //     for (var p = 0; p < b.length; p++) {
-    //         for (var q = 0; q < c.length; q++) {
-    //             if (a[o] === b[p] && b[p] === c[q]) {
-    //                 drinkMatches.push(a[o]);
-    //                 $("#drink-match-message").text("Here is a drink based off all three of your criteria");
-    //             }
-    //             else if (a[o] === b[p]) {
-    //                 drinkMatches.push(a[o]);
-    //                 $("#drink-match-message").text("We're sorry, we couldn't find a drink matching all three of your criteria. Here is a drink based off your CATEGORY and ALCOHOL CONTENT");
-    //             }
-    //             else if (b[p] === c[q]) {
-    //                 drinkMatches.push(a[o]);
-    //                 $("#drink-match-message").text("We're sorry, we couldn't find a drink matching all three of your criteria. Here is a drink based off your INGREDIENT and ALCOHOL CONTENT");
-    //             }
-    //             else if (a[o] === c[q]) {
-    //                 drinkMatches.push(a[o]);
-    //                 $("#drink-match-message").text("We're sorry, we couldn't find a drink matching all three of your criteria. Here is a drink based off your CATEGORY and INGREDIENT");
-    //             }
-    //             else {
-    //                 $("#drink-match-message").text("We're sorry, we couldn't find a drink matching any of your criteria. Please try again.");
-    //             }
-    //         }
-    //     }
-    // }
-
-    // return mealMatches;
     var allDrinks = Object.entries(drinkCollection);
-    for(var i = 0; i < allDrinks.length; i++){
-        if(drinkCollection[allDrinks[i][0]].hasOwnProperty("drinkCategoryApi")){
-            if(drinkCollection[allDrinks[i][0]].hasOwnProperty("drinkAlcoholApi")){
-                if(drinkCollection[allDrinks[i][0]].hasOwnProperty("drinkIngredientApi")){
-                drinkMatches.push(allDrinks[i][1])
+    for (var i = 0; i < allDrinks.length; i++) {
+        if (drinkCollection[allDrinks[i][0]].hasOwnProperty("drinkCategoryApi")) {
+            if (drinkCollection[allDrinks[i][0]].hasOwnProperty("drinkAlcoholApi")) {
+                if (drinkCollection[allDrinks[i][0]].hasOwnProperty("drinkIngredientApi")) {
+                    drinkMatches.push(allDrinks[i][1])
+                    $("#drink-match-message").text("Here is a drink based off all three of your criteria");
                 }
             }
-        }  
+        }
+
+        else if (drinkCollection[allDrinks[i][0]].hasOwnProperty("drinkCategoryApi")) {
+            if (drinkCollection[allDrinks[i][0]].hasOwnProperty("drinkIngredientApi")) {
+                drinkMatches.push(allDrinks[i][1])
+                $("#drink-match-message").text("We're sorry, we couldn't find a drink matching all three of your criteria. Here is a drink based off your CATEGORY and INGREDIENT");
+            }
+        }
+
+        else if (drinkCollection[allDrinks[i][0]].hasOwnProperty("drinkCategoryApi")) {
+            if (drinkCollection[allDrinks[i][0]].hasOwnProperty("drinkAlcoholApi")) {
+                drinkMatches.push(allDrinks[i][1])
+                $("#drink-match-message").text("We're sorry, we couldn't find a drink matching all three of your criteria. Here is a drink based off your CATEGORY and ALCOHOL CONTENT");
+            }
+        }
+
+        else if (drinkCollection[allDrinks[i][0]].hasOwnProperty("drinkAlcoholApi")) {
+            if (drinkCollection[allDrinks[i][0]].hasOwnProperty("drinkIngredientApi")) {
+                drinkMatches.push(allDrinks[i][1])
+                $("#drink-match-message").text("We're sorry, we couldn't find a drink matching all three of your criteria. Here is a drink based off your INGREDIENT and ALCOHOL CONTENT");
+            }
+        }
+
+        else if (drinkMatches === []) {
+            $("#drink-match-message").text("We're sorry, we couldn't find a drink matching any of your criteria. Please try again.");
+        }
     }
 }
 
@@ -398,22 +402,31 @@ function getDrinkMatch(a, b, c) {
 
 $("#generate-meal").on("click", function (event) {
     event.preventDefault();
-    var countAjax = 0;
-    var maxAjax = 6;
-    var amIdone = function () {
-        countAjax++;
-        if (countAjax >= maxAjax) {
+
+    var countAjaxMeal = 0;
+    var maxAjaxMeal = 3;
+    var amIdoneMeal = function () {
+        countAjaxMeal++;
+        if (countAjaxMeal >= maxAjaxMeal) {
             getMealMatch();
             produceFinalMeal();
+        }
+    }
+
+    var countAjaxDrink = 0;
+    var maxAjaxDrink = 3;
+    var amIdoneDrink = function () {
+        countAjaxDrink++;
+        if (countAjaxDrink >= maxAjaxDrink) {
             getDrinkMatch();
             produceFinalDrink();
         }
     }
-    chooseMealCategory(amIdone);
-    chooseMealArea(amIdone);
-    chooseMealIngredient(amIdone);
+    chooseMealCategory(amIdoneMeal);
+    chooseMealArea(amIdoneMeal);
+    chooseMealIngredient(amIdoneMeal);
 
-    chooseDrinkCategory(amIdone);
-    chooseDrinkAlcohol(amIdone);
-    chooseDrinkIngredient(amIdone);
+    chooseDrinkCategory(amIdoneDrink);
+    chooseDrinkAlcohol(amIdoneDrink);
+    chooseDrinkIngredient(amIdoneDrink);
 });
