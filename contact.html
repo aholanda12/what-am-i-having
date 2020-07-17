@@ -32,7 +32,7 @@
   <div class="grid-container">
     <div class="grid-x grid-margin-x small-up-2 medium-up-3">
       <div id="error-message"></div>
-      <form id="form" data-abide >
+      <form id="form" data-abide novalidate>
         <div class="grid-container">
           <div class="grid-x grid-padding-x">
             <div class="medium-6 cell">
@@ -50,8 +50,10 @@
                 Tell Us About It
                 <textarea id="subject" placeholder="share your experience" , cols="30" rows="5" required></textarea>
               </label>
-              <!-- <a href="#" type="submit" class="button">Submit</a> -->
-              <button onclick="validate()" type="submit">Submit</button>
+              <a  class="button large expanded" href="#">Submit</a>
+              <div style="text-align: center" class="container">
+              <h1><a href = "mailto: m.yvenson@yahoo.com">Send Us an Email</a></h1>
+              </div>
             </div>
           </div>
         </div>
@@ -62,7 +64,7 @@
 
 
   <script src="/js/foundation.min.js"></script>
-  <script src="assets/js/script2.js"></script>
+  <script src="assets/js/script.js"></script>
 </body>
 
 </html>
