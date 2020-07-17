@@ -407,9 +407,11 @@ function checkCriteria() {
     drinkCategoryChoice = $("#drink-category-choice").val();
     drinkAlcoholChoice = $("#drink-alcohol-choice").val();
     drinkIngredientChoice = $("#drink-ingredient-choice").val();
-     if ( mealCategoryChoice.startsWith("Pick") || mealAreaChoice.startsWith("Pick") || mealIngredientChoice.startsWith("Pick") || drinkCategoryChoice.startsWith("Pick") || drinkAlcoholChoice.startsWith("Pick") || drinkIngredientChoice.startsWith("Pick")) {
-         missingCriteria = true;
-         console.log(mealCategoryChoice)
+    if ( mealCategoryChoice.startsWith("Pick") || mealAreaChoice.startsWith("Pick") || mealIngredientChoice.startsWith("Pick") || drinkCategoryChoice.startsWith("Pick") || drinkAlcoholChoice.startsWith("Pick") || drinkIngredientChoice.startsWith("Pick")) {
+         missingCriteria = true; 
+     }
+     else {
+         missingCriteria = false;
      }
 }
 
@@ -418,7 +420,7 @@ function errorMessage() {
 }
 
 
-
+$('.btnleft').hide()
 $("#generate-meal").on("click", function (event) {
     event.preventDefault();
     checkCriteria()
@@ -452,6 +454,9 @@ $("#generate-meal").on("click", function (event) {
     chooseDrinkCategory(amIdoneDrink);
     chooseDrinkAlcohol(amIdoneDrink);
     chooseDrinkIngredient(amIdoneDrink);
+    $('.btnleft').show();
+    $('.btnright').hide();
+    $(".myDIV").css("display", "block");
 
 }
 });

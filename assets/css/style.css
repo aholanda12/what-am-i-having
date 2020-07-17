@@ -143,7 +143,6 @@ color: black !important;
 /*Refresh Button*/
 .btnleft{
   margin-right: 4px !important;
-  display: none !important;
 }
 /*Generate Button*/
 .btnright{
