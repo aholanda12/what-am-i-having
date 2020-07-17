@@ -407,9 +407,11 @@ function checkCriteria() {
     drinkCategoryChoice = $("#drink-category-choice").val();
     drinkAlcoholChoice = $("#drink-alcohol-choice").val();
     drinkIngredientChoice = $("#drink-ingredient-choice").val();
-     if ( mealCategoryChoice.startsWith("Pick") || mealAreaChoice.startsWith("Pick") || mealIngredientChoice.startsWith("Pick") || drinkCategoryChoice.startsWith("Pick") || drinkAlcoholChoice.startsWith("Pick") || drinkIngredientChoice.startsWith("Pick")) {
-         missingCriteria = true;
-         console.log(mealCategoryChoice)
+    if ( mealCategoryChoice.startsWith("Pick") || mealAreaChoice.startsWith("Pick") || mealIngredientChoice.startsWith("Pick") || drinkCategoryChoice.startsWith("Pick") || drinkAlcoholChoice.startsWith("Pick") || drinkIngredientChoice.startsWith("Pick")) {
+         missingCriteria = true; 
+     }
+     else {
+         missingCriteria = false;
      }
 }
 
