@@ -420,7 +420,7 @@ function errorMessage() {
 }
 
 
-
+$('.btnleft').hide()
 $("#generate-meal").on("click", function (event) {
     event.preventDefault();
     checkCriteria()
@@ -454,6 +454,9 @@ $("#generate-meal").on("click", function (event) {
     chooseDrinkCategory(amIdoneDrink);
     chooseDrinkAlcohol(amIdoneDrink);
     chooseDrinkIngredient(amIdoneDrink);
+    $('.btnleft').show();
+    $('.btnright').hide();
+    $(".myDIV").css("display", "block");
 
 }
 });
