@@ -22,7 +22,7 @@
 
 .menu {
 font-family: "Lobster", cursive;
-font-size: 40px;
+font-size: 30px;
 overflow: hidden;
 display: block;
 background-color: #27390E;
@@ -31,7 +31,7 @@ opacity: 0.75;
 .menu a{
   color: #fefefe !important;
   text-shadow: 2px 2px black;
-  
+
 }
 
 /*Header*/
@@ -140,13 +140,15 @@ color: black !important;
   background-image: -webkit-linear-gradient(bottom, rgb(247, 247, 247) 0%, rgb(247, 247, 247) 100%)!important;
   background-image: -ms-linear-gradient(bottom, rgb(247, 247, 247) 0%, rgb(247, 247, 247) 100%);
 }
-/*Generate Meal button*/
+/*Refresh Button*/
 .btnleft{
   margin-right: 4px !important;
+  display: none !important;
 }
-/*Refresh button*/
+/*Generate Button*/
 .btnright{
   margin-right: -15px !important;
+  
 }
 /*Footer*/
 .footer {
@@ -163,12 +165,20 @@ color: black !important;
 }
 
 /*MENU & RECIPES CARDS*/
+.myDIV {
+  display: none;
+}
 h3 {
   font-family: fantasy !important;
   font-size: 25px !important;
   font-weight: bolder !important;
   text-decoration: underline; 
 }
+#meal-match-message{
+  color: red;
+  font-weight: bolder;
+}
+
 
  /*TEAM MEMBERS PAGE*/
  .team-members h4{
