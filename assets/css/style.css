@@ -178,6 +178,16 @@ h3 {
   font-weight: bolder;
 }
 
+#drink-match-message{
+  color: red;
+  font-weight: bolder;
+}
+
+#error-message{
+  color: red;
+  font-weight: bolder;
+}
+
 
  /*TEAM MEMBERS PAGE*/
  .team-members h4{
