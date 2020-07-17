@@ -23,38 +23,46 @@
   </ul>
 
   <header>
-    <div class= "hero-section">
+    <div class="hero-section">
       <div class="hero-section-text">
-    <h1><strong>WHAT AM I EATING TODAY?</strong></h1>
+        <h1><strong>WHAT AM I EATING TODAY?</strong></h1>
   </header>
+  <br>
+  <br>
   <div class="grid-container">
     <div class="grid-x grid-margin-x small-up-2 medium-up-3">
-    <form>
-      <div class="grid-container">
-        <div class="grid-x grid-padding-x">
-          <div class="medium-6 cell">
-            <label>Full name
-              <input type="text" placeholder="first and last name">
-            </label>
-          </div>
-          <div class="medium-6 cell">
-            <label>Email address
-              <input type="email" placeholder="email ">
-            </label>
-          </div>
-          <div class="medium-12 cell">
-            <label>
-              Tell Us About It
-              <textarea placeholder="share your experience"></textarea>
-            </label>
-            <a class="button small expanded" href="#">Submit</a>
+      <div id="error-message"></div>
+      <form id="form" data-abide >
+        <div class="grid-container">
+          <div class="grid-x grid-padding-x">
+            <div class="medium-6 cell">
+              <label for="name">Full name <small>required</small></label>
+              <input id="name" name="name" placeholder="name" type="text" required>
+              </label>
+            </div>
+            <div class="medium-6 cell">
+              <label for="email">Email address <small>required</small></label>
+              <input id="email" name="email" type="email" placeholder="email" pattern="email" required>
+              </label>
+            </div>
+            <div class="medium-12 cell">
+              <label>
+                Tell Us About It
+                <textarea id="subject" placeholder="share your experience" , cols="30" rows="5" required></textarea>
+              </label>
+              <!-- <a href="#" type="submit" class="button">Submit</a> -->
+              <button onclick="validate()" type="submit">Submit</button>
+            </div>
           </div>
         </div>
-      </div>
-    </form>
-  </div>
+      </form>
+    </div>
   </div>
 
+
+
+  <script src="/js/foundation.min.js"></script>
+  <script src="assets/js/script2.js"></script>
 </body>
 
 </html>
