@@ -455,4 +455,3 @@ $("#generate-meal").on("click", function (event) {
 
 }
 });
-
