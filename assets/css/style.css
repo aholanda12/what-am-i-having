@@ -22,7 +22,7 @@
 
 .menu {
 font-family: "Lobster", cursive;
-font-size: 25px;
+font-size: 40px;
 overflow: hidden;
 display: block;
 background-color: #27390E;
@@ -31,6 +31,7 @@ opacity: 0.75;
 .menu a{
   color: #fefefe !important;
   text-shadow: 2px 2px black;
+  
 }
 
 /*Header*/
@@ -80,6 +81,7 @@ flex-direction: row;
   border-width: 10px;
   opacity: 90%;
   border-color: black;
+  height:100%;
 }
 
 .card-section {
@@ -129,6 +131,7 @@ padding: 20px 70px !important;
 min-width: 300px !important;;
 background-color: #AAB1AB !important;
 font-style: italic; 
+color: black !important;
 }
 .button:hover {
   background-image: linear-gradient(bottom, rgb(247, 247, 247) 0%, rgb(247, 247, 247) 100%) !important;
@@ -139,11 +142,11 @@ font-style: italic;
 }
 /*Generate Meal button*/
 .btnleft{
-  margin-right: 48px !important;
+  margin-right: 4px !important;
 }
 /*Refresh button*/
 .btnright{
-  margin-right: 15px !important;
+  margin-right: -15px !important;
 }
 /*Footer*/
 .footer {
@@ -166,6 +169,7 @@ h3 {
   font-weight: bolder !important;
   text-decoration: underline; 
 }
+
  /*TEAM MEMBERS PAGE*/
  .team-members h4{
     text-align: center;
