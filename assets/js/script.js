@@ -21,6 +21,8 @@ var mealCollection = {
 var drinkCollection = {
 }
 
+var missingCriteria
+
 // Grabbing the array for Meal Category
 function chooseMealCategory(callback) {
     mealCategoryChoice = $("#meal-category-choice").val();
@@ -208,7 +210,7 @@ function chooseDrinkIngredient(callback) {
 
 // Generating the chosen meal
 function produceFinalMeal() {
-    if (mealMatches = []) {
+    if (mealMatches[0] == null) {
         $("#meal-match-message").text("We're sorry, we couldn't find a meal matching any of your criteria. Please try again.");
     }
     else {
@@ -266,7 +268,7 @@ function produceFinalMeal() {
 
 // Generating the chosen drink
 function produceFinalDrink() {
-    if (drinkMatches = []) {
+    if (drinkMatches[0] == null) {
         $("#drink-match-message").text("We're sorry, we couldn't find a drink matching any of your criteria. Please try again.");
     }
     else {
@@ -398,11 +400,32 @@ function getDrinkMatch(a, b, c) {
     }
 }
 
+function checkCriteria() {
+    mealCategoryChoice = $("#meal-category-choice").val();
+    mealAreaChoice = $("#meal-area-choice").val();
+    mealIngredientChoice = $("#meal-ingredient-choice").val();
+    drinkCategoryChoice = $("#drink-category-choice").val();
+    drinkAlcoholChoice = $("#drink-alcohol-choice").val();
+    drinkIngredientChoice = $("#drink-ingredient-choice").val();
+     if ( mealCategoryChoice.startsWith("Pick") || mealAreaChoice.startsWith("Pick") || mealIngredientChoice.startsWith("Pick") || drinkCategoryChoice.startsWith("Pick") || drinkAlcoholChoice.startsWith("Pick") || drinkIngredientChoice.startsWith("Pick")) {
+         missingCriteria = true;
+         console.log(mealCategoryChoice)
+     }
+}
+
+function errorMessage() {
+    alert("Please fill out all fields");
+}
+
 
 
 $("#generate-meal").on("click", function (event) {
     event.preventDefault();
-
+    checkCriteria()
+    if (missingCriteria) {
+        errorMessage();
+    }
+    else {
     var countAjaxMeal = 0;
     var maxAjaxMeal = 3;
     var amIdoneMeal = function () {
@@ -429,4 +452,6 @@ $("#generate-meal").on("click", function (event) {
     chooseDrinkCategory(amIdoneDrink);
     chooseDrinkAlcohol(amIdoneDrink);
     chooseDrinkIngredient(amIdoneDrink);
+
+}
 });
