@@ -190,11 +190,19 @@ h3 {
 
 
  /*TEAM MEMBERS PAGE*/
+ .team-members{
+ text-align: center;
+}
+
  .team-members h4{
-    text-align: center;
     font-family: 'Fira Sans', sans-serif;
     color: #27390E ;
 }
+
+.team-members a{
+  color: #27390E ;
+ }
+ 
 
 
 
