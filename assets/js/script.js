@@ -323,40 +323,45 @@ function produceFinalDrink() {
     }
 }
 
-function getMealMatch() {
+function getMealMatch(a, b, c) {
 
     var allMeals = Object.entries(mealCollection);
     for (var i = 0; i < allMeals.length; i++) {
         if (mealCollection[allMeals[i][0]].hasOwnProperty("mealCategoryApi")) {
-            if (mealCollection[allMeals[i][0]].hasOwnProperty("mealAreaApi")) {
-                if (mealCollection[allMeals[i][0]].hasOwnProperty("mealIngredientApi")) {
+            if (mealCollection[allMeals[i][0]].hasOwnProperty("mealIngredientApi")) {
+                if (mealCollection[allMeals[i][0]].hasOwnProperty("mealAreaApi")) {
                     mealMatches.push(allMeals[i][1])
                     $("#meal-match-message").text("Here is a meal based off all three of your criteria");
                 }
             }
         }
+    }
 
-        else if (mealCollection[allMeals[i][0]].hasOwnProperty("mealCategoryApi")) {
-            if (mealCollection[allMeals[i][0]].hasOwnProperty("mealIngredientApi")) {
-                mealMatches.push(allMeals[i][1])
-                $("#meal-match-message").text("We're sorry, we couldn't find a meal matching all three of your criteria. Here is a meal based off your CATEGORY and INGREDIENT");
+    if(mealMatches.length <= 0){
+        for (var i = 0; i < allMeals.length; i++) {
+            if (mealCollection[allMeals[i][0]].hasOwnProperty("mealCategoryApi")) {
+                if (mealCollection[allMeals[i][0]].hasOwnProperty("mealIngredientApi")) {
+                    mealMatches.push(allMeals[i][1])
+                    $("#meal-match-message").text("We're sorry, we couldn't find a meal matching all three of your criteria. Here is a meal based off your CATEGORY and INGREDIENT");
+                }
             }
-        }
-
-        else if (mealCollection[allMeals[i][0]].hasOwnProperty("mealCategoryApi")) {
-            if (mealCollection[allMeals[i][0]].hasOwnProperty("mealAreaApi")) {
-                mealMatches.push(allMeals[i][1])
-                $("#meal-match-message").text("We're sorry, we couldn't find a meal matching all three of your criteria. Here is a meal based off your CATEGORY and AREA");
+    
+            else if (mealCollection[allMeals[i][0]].hasOwnProperty("mealCategoryApi")) {
+                if (mealCollection[allMeals[i][0]].hasOwnProperty("mealAreaApi")) {
+                    mealMatches.push(allMeals[i][1])
+                    $("#meal-match-message").text("We're sorry, we couldn't find a meal matching all three of your criteria. Here is a meal based off your CATEGORY and AREA");
+                }
             }
-        }
-
-        else if (mealCollection[allMeals[i][0]].hasOwnProperty("mealAreaApi")) {
-            if (mealCollection[allMeals[i][0]].hasOwnProperty("mealIngredientApi")) {
-                mealMatches.push(allMeals[i][1])
-                $("#meal-match-message").text("We're sorry, we couldn't find a meal matching all three of your criteria. Here is a meal based off your INGREDIENT and AREA");
+    
+            else if (mealCollection[allMeals[i][0]].hasOwnProperty("mealAreaApi")) {
+                if (mealCollection[allMeals[i][0]].hasOwnProperty("mealIngredientApi")) {
+                    mealMatches.push(allMeals[i][1])
+                    $("#meal-match-message").text("We're sorry, we couldn't find a meal matching all three of your criteria. Here is a meal based off your INGREDIENT and AREA");
+                }
             }
         }
     }
+    console.log(mealMatches);
 }
 
 
