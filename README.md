@@ -16,8 +16,10 @@ https://www.thecocktaildb.com/api.php
 
 An open online database of food meal and cocktail recipes. Although the database is limited to certain recipes it is still being developed to allow users to add more options in the future. The API is free to access at a simple level and provides more flexibility and options when certain features are unlocked after their appropriate links are paid for. 
 
-![](assets/css/homepage.png)
-![](assets/css/contactpage.png)
+<img width="1438" alt="homepage" src="https://user-images.githubusercontent.com/65003712/88004517-28d34280-cad5-11ea-8031-5ec6cb0e2977.png">
+
+<img width="1440" alt="contactpage" src="https://user-images.githubusercontent.com/65003712/88004550-3dafd600-cad5-11ea-89eb-f720f5412273.png">
+
 
 DEPLOYED PROJECT
 https://aholanda12.github.io/what-am-i-having/
